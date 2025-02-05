@@ -40,7 +40,6 @@ header li a {
 }
 
 .articles article img {
-    /* height: 180px; */
     width: 100%;
 }
 
@@ -96,4 +95,12 @@ section h2 {
 
 #economy{
     background-color: rgba(255, 255, 0, 0.2);
+}
+
+#movies{
+    background-color: rgba(111, 18, 127, 0.5);
+}
+
+#curio{
+    background-color: rgba(248, 3, 3, 0.403);
 }
