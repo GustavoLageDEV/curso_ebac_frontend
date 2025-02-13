@@ -58,14 +58,3 @@ form {
     width: 50%;
     margin: 0 auto;
 }
-
-.goodMessage{
-    display: block;
-    background-color: rgb(0, 150, 25);
-
-}
-
-.badMessage{
-    display: block;
-    background-color: rgb(150, 0, 0);
-}
