@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    padding: 16px;
+    background-color: rgb(0, 110, 110);
+    color: #ecf0f1;
+}
+
+header nav li{
+    display: inline;
+    margin-left: 1em;
+    font-size: 1.25em;
+}
+
+header nav li a {
+    color: #ecf0f1;
+    text-decoration: none;
+}
+
+.container{
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+header .container,
+section .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#about .container > img {
+    width: 400px;
+    max-width: 100%;
+}
+
+section .container {
+    align-items: flex-start;
+}
+
+.text{
+    margin-left: 2rem;
+}
+
+section{
+    color: rgb(0, 110, 110);
+    padding: 2rem 0;
+}
+
+section h2{
+    padding-bottom: 1rem;
+    border-bottom: 2px solid rgb(0, 110, 110);
+    margin-bottom: 2rem;
+}
+
+section p {
+    margin-bottom: 0.5rem;
+}
+
+.brands-list{
+    display: inline-flex;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.brands-list li{
+    list-style: none;
+    margin-right: 0.75rem;
+}
+
+.brands-list img{
+    height: 2rem;
+}
+
+#products h2{
+    width: 100%;
+}
+
+.product img{
+    width: 100%;
+}
+
+.product button{
+    padding: 4px;
+    background-color:rgb(0, 110, 110);
+    color: #ecf0f1;
+    width: 100%;
+}
+
+#products .container{
+    display: grid;
+    grid-template-columns: repeat(4 , 24.25%);
+    column-gap: 1%;
+    row-gap: 5%;
+}
