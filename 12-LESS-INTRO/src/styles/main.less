@@ -1,9 +1,9 @@
-@import "mapas.less";
+@import "mapas.less"; //Importing a map//
 
-@breakpointMobile: ~"(max-width: 767px)";
+@breakpointMobile: ~"(max-width: 767px)"; //Making escaping: ~"css_string"//
 @breakpointTablet: ~"(min-width: 768px) and (max-width: 1023px)";
 
-.marginBottom8{
+.marginBottom8{ //Making a mixin: .mixin_name or .mixin_name()//
     margin-bottom: 8px;
 }
 
@@ -15,7 +15,7 @@
 }
 
 body {
-    background-color: #colors[backgroundColor];
+    background-color: #colors[backgroundColor]; //Using a map imported #map_name[variable_name]//
     color: #colors[textColor];
 }
 
@@ -32,7 +32,7 @@ li{
     flex-direction: column;
     justify-content: center;
 
-    @media @breakpointMobile{
+    @media @breakpointMobile{ //Using Escaping: @escaping_name//
         max-width: 70%;
     }
 
@@ -56,9 +56,9 @@ header {
 
     text-align: center;
 
-    &-name {
+    &-name { //optimizing selector with &: .profile-bio-name//
         font-size: 16px ;
-        .marginBottom8();
+        .marginBottom8(); //using a Mixin: .mixin_name()//
     }
 
     &-subtitle{
