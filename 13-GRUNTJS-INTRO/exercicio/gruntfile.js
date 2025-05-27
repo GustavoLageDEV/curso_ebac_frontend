@@ -1,9 +1,9 @@
-module.exports = function(grunt) {
+module.exports = function(grunt){
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         less: {
-            development:{
-                files:{
+            development :{
+                files: {
                     'dev/styles/main.css': 'src/styles/main.less'
                 }
             },
@@ -12,7 +12,7 @@ module.exports = function(grunt) {
                     compress: true
                 },
                 files: {
-                    'dist/styles/main.min.css': 'src/styles/main.less'
+                    'dist/styles/main.min.css' : 'src/styles/main.less'
                 }
             }
         },
@@ -24,6 +24,20 @@ module.exports = function(grunt) {
             html : {
                 files: ['src/index.html'],
                 tasks: ['replace:dev']
+            },
+            images : {
+                files: ['src/images/**/*.{png,jpg,jpeg,gif,svg}'],
+                tasks: ['copy:images']
+            }
+        },
+        copy: {
+            images: {
+                files: [{
+                expand: true,
+                cwd: 'src/images/',       // Pasta de origem
+                src: ['**/*.{png,jpg,jpeg,gif,svg}'], // Arquivos que serão copiados
+                dest: 'dev/images/'       // Pasta de destino no ambiente de desenvolvimento
+                }]
             }
         },
         replace: {
@@ -75,6 +89,16 @@ module.exports = function(grunt) {
                 }
             }
         },
+        imagemin: {
+            dynamic: {
+                files: [{
+                expand: true,
+                cwd: 'src/images/',        // Pasta de origem
+                src: ['**/*.{png,jpg,jpeg,gif,svg}'], // Tipos de arquivos
+                dest: 'dist/images/'       // Pasta de destino
+                }]
+            }
+        },
         clean: ['prebuild'],
         uglify: {
             target: {
@@ -91,7 +115,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-contrib-copy');
 
-    grunt.registerTask('default', ['watch']);
-    grunt.registerTask('build', ['less:production', 'htmlmin:dist','replace:dist','clean','uglify'])
+    grunt.registerTask('default', ['copy:images','watch']);
+    grunt.registerTask('build', ['less:production', 'htmlmin:dist','replace:dist','clean','uglify','imagemin'])
 }
