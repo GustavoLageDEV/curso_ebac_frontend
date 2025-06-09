@@ -60,6 +60,7 @@ console.log(carroDoDavi);
 
 // const motorJulia = carroDaJulia.motor;
 
+// const {propriedadeASerExtraida: Alias} = Objeto;
 var motorJulia = carroDaJulia.motor;
 var motorDavi = carroDoDavi.motor;
 console.log("Motor da Julia: ".concat(motorJulia, ", Mototr do Davi: ").concat(motorDavi));

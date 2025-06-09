@@ -57,6 +57,7 @@ console.log(carroDoDavi)
 
 // const motorJulia = carroDaJulia.motor;
 
+// const {propriedadeASerExtraida: Alias} = Objeto;
 const {motor: motorJulia} = carroDaJulia;
 const {motor: motorDavi} = carroDoDavi;
 
